@@ -5,11 +5,12 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
+route::group(['middleware' => ['auth:sanctum']], function(){
 route::apiResource('/Api',ApirestController::class);
-Route::post('/login',[AuthController::class,'login']);
-Route::post('/register',[AuthController::class,'register']);
-
+route::post('/login',[AuthController::class,'login']);
+route::post('/register',[AuthController::class,'register'
+]);
+});
 
 //  Route::post('/Api',[ApirestController::class,'store']);
 //  Route::get('/Api',[ApirestController::class,'index']);

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('email')->unique();
             $table->string('senha');
+            $table->boolean('admin')->nullable();
+            $table->boolean('client')->nullable();
             $table->string('curso');
             $table->integer('carga_horaria');
             $table->decimal('valor', 8, 2);
